@@ -34,7 +34,7 @@ jobs:
     if: >-
       ${{ github.event_name == 'push' ||
           (github.event_name == 'pull_request' &&
-           contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+           contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     steps:
       - run: |
           echo "========================================"
@@ -54,7 +54,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     steps:
       - run: |
           echo "========================================"
@@ -113,7 +113,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     strategy:
       fail-fast: false
       matrix:
@@ -147,7 +147,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     steps:
       - run: |
           echo "========================================"
@@ -167,7 +167,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     steps:
       - run: |
           echo "========================================"
@@ -187,7 +187,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     steps:
       - run: |
           echo "========================================"
@@ -207,7 +207,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     steps:
       - run: |
           echo "========================================"
@@ -226,7 +226,7 @@ jobs:
     # Run on push to main, or only when the specific label is modified on a PR
     if: >-
       ${{ github.event_name == 'push' ||
-          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive')) }}
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Tests::Run-Exhaustive') && (github.event.action == 'synchronize' || github.event.label.name == 'Tests::Run-Exhaustive')) }}
     permissions:
       contents: read
       packages: write
